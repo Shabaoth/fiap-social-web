@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
+    overflow-y: scroll;
+    height: 100vh;
     padding-top: 80px;
     height: 100vh;
 

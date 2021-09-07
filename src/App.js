@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { GlobalStyles } from "./GlobalStyles";
+// import Feed from "./pages/Feed";
 import Router from "./routes";
 import { api } from "./services/api";
 import { signIn } from "./services/security";
@@ -10,23 +11,26 @@ function App() {
   const [error, setError] = useState(false);
 
   //executar o login hard code
-  useEffect(() => {
-    const doSignIn = async () => {
-      try {
-        const response = await api.post("/sessions", {
-          email: "rafanleme@gmail.com",
-          password: "123456"
-        });
+  useEffect(()=>{
 
-        signIn(response.data);
-      } catch (error) {
-        console.error(error);
+    const doSignIn = async () => {
+      try{
+          const response = await api.post("/sessions", {
+            email: "gstvo357marcelino@gmail.com",
+            password: "69622934Guh."
+          });
+          signIn(response.data);
+        } catch (error){
+        console.error(error);        
         setError(true);
-      } finally {
-        setLoading(false);
+
+        } finally{
+          setLoading(false);
+        }
       }
-    }
-    doSignIn();
+
+      doSignIn();
+      
   }, []);
 
   return (

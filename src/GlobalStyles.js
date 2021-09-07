@@ -23,6 +23,8 @@ export const GlobalStyles = createGlobalStyle`
         font-family: sans-serif;
         background-color: var(--bgPrimary);
 
+        overflow: hidden;
+
         color: var(--textPrimary);
 
         overflow: hidden;
@@ -46,5 +48,9 @@ export const GlobalStyles = createGlobalStyle`
         :active{
             transform: scale(0.9);
         }
+    }
+
+    button:disabled{
+        filter: brightness(0.60);
     }
 `;

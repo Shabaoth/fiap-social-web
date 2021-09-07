@@ -59,10 +59,10 @@ function Feed() {
     return (
         <Container onScroll={scrollObserver}>
             <Header />
-            {posts.map(post => <Post data={post} />)}
+            {posts.map((post, idx) => <Post data={post} key={idx}/>)}
             <FaButton onClick={handleNavigateToNewPost}>+</FaButton>
         </Container>
     );
 }
-
 export default Feed;
+

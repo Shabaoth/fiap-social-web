@@ -76,9 +76,11 @@ export const CardPost = styled.article`
             }
         }
 
-        > div {
+        > div {            
             display: flex;
         }
+
+        
     }
 `;
 
