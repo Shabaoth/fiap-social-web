@@ -7,8 +7,8 @@ function Header() {
     return (
         <Container>
             <div>
-                <img src={imgLogo} id="logo" />
-                <img src={imgProfile} />
+                <img src={imgLogo} id="logo" alt="" />
+                <img src={imgProfile} alt="" />
                 <p>Fulano</p>
             </div>
             <IconSignOut />

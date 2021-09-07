@@ -1,10 +1,9 @@
 import { CardComent, CardPost } from "./styles";
 import imgProfile from "../../assets/profile.png";
 import { useEffect, useState } from "react";
-import { getAnswer, getUser } from "../../services/security";
+import { getUser } from "../../services/security";
 import { format } from "date-fns";
 import { api } from "../../services/api";
-import Select from "../../components/Select";
 
 function Post({data}) {
     let signedUser = getUser();
@@ -19,6 +18,7 @@ function Post({data}) {
         setComentario(event.target.value);
     };
 
+    
     const handleEnviar = async (e) => {
 
         setIsLoading(true);        
@@ -44,26 +44,14 @@ function Post({data}) {
             const response = await api.get("/answers");
 
             setComentarios(response.data);
-        } catch (error) {
+        } catch (error) {//
             console.error(error);
             alert("Ops, erro ao buscar os comentários");
         }
     }
-
-    useEffect(() => {
-        const loadComentarios = async () => {
-            try {
-                const response = await api.get("/answers");
-
-                setComentarios(response.data);
-            } catch (error) {
-                console.error(error);
-                alert("Ops, erro ao buscar os comentários");
-            }
-        }
-        
+    useEffect(() => {         
         loadComentarios();
-    }, []);
+    }, [comentarios]);
 
     return (
         <CardPost >
